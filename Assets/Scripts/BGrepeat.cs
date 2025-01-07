@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGrepeat : MonoBehaviour
+public class BgRepeat : MonoBehaviour
 {
     private Vector3 StartPos;
     private float repeatWidth;
