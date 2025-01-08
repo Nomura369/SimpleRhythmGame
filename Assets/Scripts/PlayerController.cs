@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject BulletPrefab;
+    [SerializeField] private Vector3 BulletPos = new Vector3(1.71f, 1.53f, 0);
     // [SerializeField] private Animator PlayerAnimator;
     // [SerializeField] private ParticleSystem ExplosionParticle;
-    // [SerializeField] private ParticleSystem DirtParticle;
+    [SerializeField] private ParticleSystem DirtParticle;
     // [SerializeField] private AudioClip CrashSound;
     // [SerializeField] private AudioSource PlayerAudio;
 
@@ -22,8 +24,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 不會有跳躍功能
-        // DirtParticle.Play(); // 玩家在地面時，維持泥土飛濺特效
+        DirtParticle.Play(); // 玩家跑步時維持泥土飛濺特效
+
+        if(Input.GetKeyDown(KeyCode.Space)){ // 按下空白鍵發射子彈
+            Instantiate(BulletPrefab, BulletPos, BulletPrefab.transform.rotation);
+        }
     }
 
     // private void OnCollisionEnter(Collision collision) { // 撞到（有碰撞體的）東西就執行
