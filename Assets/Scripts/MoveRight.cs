@@ -5,13 +5,12 @@ using UnityEngine;
 public class MoveRight : MonoBehaviour
 {
     [SerializeField] private float speed = 40f;
-    [SerializeField] private AudioClip ShotSound;
-    [SerializeField] private AudioSource BulletAudio;
+    public static bool isEnemyShot = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        BulletAudio.GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -26,9 +25,11 @@ public class MoveRight : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         // 如果打中動物就銷毀子彈和動物
         if(other.gameObject.CompareTag("Enemy")){
-            BulletAudio.PlayOneShot(ShotSound);
-            // Destroy(other.gameObject, 0.7f);
-            // Destroy(gameObject, 0.7f);
+            print("子彈打中了");
+            isEnemyShot = true; // 發出音效
+            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
+
 }
