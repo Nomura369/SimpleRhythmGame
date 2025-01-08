@@ -16,12 +16,19 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed, Space.World);
-        // if(PCscript.isGameOver == false){
-        //     transform.Translate(Vector3.left * Time.deltaTime * speed);
-        // }
-        // if(transform.position.x < -10 && gameObject.CompareTag("Obstacle")){
-        //     Destroy(gameObject);
-        // }
+        if(!PlayerController.isGameOver){
+            transform.Translate(Vector3.left * Time.deltaTime * speed, Space.World);
+        }
+        else{
+            if(gameObject.name == "Background"){ // 停止移動背景
+                transform.position = transform.position; 
+            }
+            if(gameObject.CompareTag("Enemy")){ // 銷毀離開畫面的動物
+                transform.Translate(Vector3.left * Time.deltaTime * speed, Space.World);
+                if(transform.position.x < -5){
+                    Destroy(gameObject);
+                }
+            }
+        }
     }
 }

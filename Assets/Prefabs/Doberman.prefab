@@ -4101,11 +4101,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5609848519637261232}
   - component: {fileID: 214952278659556391}
-  - component: {fileID: 2238914537043621579}
-  - component: {fileID: 6867269298149466545}
   - component: {fileID: 3375858601155858265}
+  - component: {fileID: 2078302232977961219}
   m_Layer: 0
-  m_Name: Dog_Doberman_01
+  m_Name: Doberman
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4119,7 +4118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5408046724746203253}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10.5, y: 10.5, z: 10.5}
   m_ConstrainProportionsScale: 0
@@ -4162,7 +4161,7 @@ Transform:
   - {fileID: 7712297601942872049}
   - {fileID: 3850478677136987150}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!95 &214952278659556391
 Animator:
   serializedVersion: 5
@@ -4184,33 +4183,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2238914537043621579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5408046724746203253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b5f51330a112694a9fcc3b779e36b59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 10
---- !u!114 &6867269298149466545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5408046724746203253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caec110fa75ff3e4782d7cac9636d992, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TopBoundary: 30
-  BottomBoundary: -10
 --- !u!65 &3375858601155858265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4232,6 +4204,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.19328989, y: 0.26351818, z: 0.33987895}
   m_Center: {x: -0.0003663188, y: 0.12303478, z: 0.028420381}
+--- !u!114 &2078302232977961219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5408046724746203253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b621cfdfbdc0b7a46a30f37d1dadf320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
 --- !u!1 &5456378971978635818
 GameObject:
   m_ObjectHideFlags: 0

@@ -1060,11 +1060,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6295922706241291624}
   - component: {fileID: 305950242653348782}
-  - component: {fileID: 5980407822831037468}
-  - component: {fileID: 1762903242125178664}
   - component: {fileID: 6291963240394149130}
+  - component: {fileID: -687918000566064864}
   m_Layer: 0
-  m_Name: Animal_Horse_Brown
+  m_Name: Horse
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,7 +1077,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4261878208207623547}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
@@ -1090,7 +1089,7 @@ Transform:
   - {fileID: 8619012908455090391}
   - {fileID: 832940461730538258}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!95 &305950242653348782
 Animator:
   serializedVersion: 5
@@ -1112,33 +1111,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5980407822831037468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4261878208207623547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b5f51330a112694a9fcc3b779e36b59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 10
---- !u!114 &1762903242125178664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4261878208207623547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caec110fa75ff3e4782d7cac9636d992, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TopBoundary: 30
-  BottomBoundary: -10
 --- !u!65 &6291963240394149130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1160,6 +1132,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 15, y: 44.19784, z: 52.05535}
   m_Center: {x: 0, y: 16.424187, z: 3.4219563}
+--- !u!114 &-687918000566064864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261878208207623547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b621cfdfbdc0b7a46a30f37d1dadf320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
 --- !u!1 &4369077388682423026
 GameObject:
   m_ObjectHideFlags: 0

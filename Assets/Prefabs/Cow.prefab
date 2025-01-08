@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: -1746528091315005506}
   - component: {fileID: 1774339629578322323}
   m_Layer: 0
-  m_Name: Animal_Cow_White
+  m_Name: Cow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 1825391720950917797}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 10, y: 0, z: 16.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
   m_ConstrainProportionsScale: 0
   m_Children:

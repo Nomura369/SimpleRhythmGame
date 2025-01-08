@@ -26,7 +26,7 @@ public class MoveRight : MonoBehaviour
         // 如果打中動物就銷毀子彈和動物
         if(other.gameObject.CompareTag("Enemy")){
             print("子彈打中了");
-            isEnemyShot = true; // 發出音效
+            isEnemyShot = true; // 音效設定
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
