@@ -5,12 +5,12 @@ using UnityEngine;
 public class MoveRight : MonoBehaviour
 {
     [SerializeField] private float speed = 40f;
-    public static bool isEnemyShot = false;
-
+    public static bool isEnemyShot;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        isEnemyShot = false;
     }
 
     // Update is called once per frame
@@ -31,5 +31,4 @@ public class MoveRight : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

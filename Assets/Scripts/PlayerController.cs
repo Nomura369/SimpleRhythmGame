@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,19 +15,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ParticleSystem DirtParticle;
     [SerializeField] private AudioClip DieSound;
     [SerializeField] private AudioSource PlayerAudio;
+    [SerializeField] private GameObject GameOverUI;
+    [SerializeField] private Button GameOverBtn;
 
     // [SerializeField] private float jumpForce = 10;
     // [SerializeField] private float gravityModifier = 1;
     // [SerializeField] private bool isOnGround = true;
-    public static bool isGameOver = false;
+    public static bool isGameOver;
     [SerializeField] private Vector3 BulletOffset = new Vector3(1.71f, 1.53f, 0);
 
-        void Start()
+    void Start()
     {
+        isGameOver = false;
         PlayerRb = GetComponent<Rigidbody>(); 
         // Physics.gravity *= gravityModifier; // 改變 Unity 的重力場（跳躍的手感）
         PlayerAnimator = GetComponent<Animator>();
         BulletPos = transform.position + BulletOffset;
+        GameOverUI.SetActive(false);
+        GameOverBtn.onClick.AddListener(RestartGame);
     }
 
     void Update()
@@ -40,6 +47,8 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Z) && !isGameOver){ // 按下Z鍵發射子彈
             Instantiate(BulletPrefab, BulletPos, BulletPrefab.transform.rotation);
         }
+
+        
     }
 
     private void OnCollisionEnter(Collision collision) { // 撞到（有碰撞體的）東西就執行
@@ -54,6 +63,7 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")){
             isGameOver = true;
             print("Game Over");
+            GameOverUI.SetActive(true);
             // 設定死亡音效＆特效
             PlayerAudio.PlayOneShot(DieSound);
             DirtParticle.Stop(); 
@@ -62,5 +72,8 @@ public class PlayerController : MonoBehaviour
             PlayerAnimator.SetInteger("DeathType_int", 1);
         }
     }
-
+    
+    public void RestartGame(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
