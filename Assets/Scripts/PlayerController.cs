@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         //     DirtParticle.Stop(); // 跳躍時停止泥土飛濺特效
         // }
 
-        if(Input.GetKeyDown(KeyCode.Z) && !isGameOver){ // 按下Z鍵發射子彈
+        if(Input.GetKeyDown(KeyCode.Z) && !isGameOver && GameStart.isGameStart){ // 按下Z鍵發射子彈
             Instantiate(BulletPrefab, BulletPos, BulletPrefab.transform.rotation);
         }
 

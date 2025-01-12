@@ -16,8 +16,12 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PlayerController.isGameOver){
+        if(!PlayerController.isGameOver && GameStart.isGameStart){
             transform.Translate(Vector3.left * Time.deltaTime * speed, Space.World);
+            // 隱藏離開畫面的披薩店
+            if(gameObject.name == "PizzaShop" && transform.position.x < -5){ 
+                gameObject.SetActive(false);
+            }
         }
         else{
             if(gameObject.name == "Background"){ // 停止移動背景

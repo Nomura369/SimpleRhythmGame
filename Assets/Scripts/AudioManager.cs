@@ -28,16 +28,18 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MoveRight.isEnemyShot){
-            score += 100;
-            int soundIndex = Random.Range(0, ShotSound.Length);
-            BulletAudio[soundIndex].PlayOneShot(ShotSound[soundIndex]);
-            MoveRight.isEnemyShot = false;
-        }
-        if(PlayerController.isGameOver){
-            BgAudio.Stop(); // 停止播放背景音樂
-        }
+        if(GameStart.isGameStart){
+            if(MoveRight.isEnemyShot){
+                score += 100;
+                int soundIndex = Random.Range(0, ShotSound.Length);
+                BulletAudio[soundIndex].PlayOneShot(ShotSound[soundIndex]);
+                MoveRight.isEnemyShot = false;
+            }
+            if(PlayerController.isGameOver){
+                BgAudio.Stop(); // 停止播放背景音樂
+            }
 
-        ScoreText.text = score.ToString();
+            ScoreText.text = score.ToString();
+        }  
     }
 }

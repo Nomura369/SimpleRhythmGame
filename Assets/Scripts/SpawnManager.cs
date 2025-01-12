@@ -26,7 +26,7 @@ public class SpawnManager : MonoBehaviour
     }
 
     void SpawnRandomAnimal(){
-        if(!PlayerController.isGameOver){
+        if(!PlayerController.isGameOver && GameStart.isGameStart){
             int animalIndex = Random.Range(0, AnimalPrefabs.Length);
             Instantiate(AnimalPrefabs[animalIndex], spawnPos, AnimalPrefabs[animalIndex].transform.rotation);
         }
